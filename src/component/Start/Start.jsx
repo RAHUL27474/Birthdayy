@@ -15,7 +15,7 @@ function Start (){
         setNo(true);
     }
     if (isYes) {
-        return <Navigate to="/home"/>;
+        return <Navigate to="/birth"/>;
       }
     if(isNo){
         alert("Comeback on the right day!")
