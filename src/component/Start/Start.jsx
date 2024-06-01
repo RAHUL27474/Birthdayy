@@ -18,6 +18,7 @@ function Start (){
         return <Navigate to="/home"/>;
       }
     if(isNo){
+        setNo(false);
         alert("Comeback on the right day!")
     }
   return (
