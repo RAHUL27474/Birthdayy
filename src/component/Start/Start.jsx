@@ -21,8 +21,8 @@ function Start (){
         alert("Comeback on the right day!")
     }
   return (
-    <div style={divstyle} className=' bg-lime-500 w-screen h-screen content-center'>
-      <div className=' flex content-center justify-center'>
+    <div style={divstyle} className=' bg-lime-500 w-screen h-screen flex flex-col justify-center'>
+      <div className=' flex justify-center'>
         <div className=' text-3xl'>
             <h1>Is it 5<sup>th</sup> of June?</h1>
             <div className=' flex justify-around'>
