@@ -9,7 +9,7 @@ function Home () {
 
   const matchName = () => {
     if (userName.trim() !== '') {
-      if (userName.toLowerCase() === givenName.toLowerCase()) {
+      if (userName.trim().toLowerCase() === givenName.toLowerCase()) {
         alert('Hi Spelina!');
         setShouldNavigate(true);
 
