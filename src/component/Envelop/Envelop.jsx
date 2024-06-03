@@ -24,7 +24,7 @@ const Envelop = () => {
                             envelope.classList.toggle('flap');
                             if(change === false){
                               setChange(true);
-                              setBackgroundImage('https://tse4.mm.bing.net/th/id/OIP.USOWJoCy_MXmoc5RoOuJBAHaNK?rs=1&pid=ImgDetMain');
+                              setBackgroundImage('https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Photos-Light-Blue-Backgrounds.jpg');
                             }else{
                               setChange(false);
                               setTimeout(() => setBackgroundImage('https://wallpapercave.com/wp/wp6438851.jpg'), 1000);
