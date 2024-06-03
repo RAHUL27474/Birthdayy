@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Envelope.css'
 import { Navigate } from 'react-router-dom';
+import envelope1 from '../../../public/envelope1.webp'
 const Envelop = () => {
-    const [backgroundImage, setBackgroundImage] = useState('https://wallpapercave.com/wp/wp6438851.jpg');
+    const [backgroundImage, setBackgroundImage] = useState('./public/envelope1.webp');
     const [change, setChange] = useState(false);
     const [isClickMeVisible, setClickMeVisible] = useState(false);
     const [goWish, setGoWish]= useState(false);
@@ -24,7 +25,7 @@ const Envelop = () => {
                             envelope.classList.toggle('flap');
                             if(change === false){
                               setChange(true);
-                              setBackgroundImage('https://tse4.mm.bing.net/th/id/OIP.USOWJoCy_MXmoc5RoOuJBAHaNK?rs=1&pid=ImgDetMain');
+                              setBackgroundImage('./public/envelop2.jpeg');
                             }else{
                               setChange(false);
                               setTimeout(() => setBackgroundImage('https://wallpapercave.com/wp/wp6438851.jpg'), 1000);
