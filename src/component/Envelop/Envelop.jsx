@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import './Envelope.css'
+import { Navigate } from 'react-router-dom';
 const Envelop = () => {
-    const [backgroundImage, setBackgroundImage] = useState('https://tse1.mm.bing.net/th/id/OIP.rE0uuA4fzSsOM1O_FoxeQQHaNK?rs=1&pid=ImgDetMain');
-    const [change, setChange] = useState(false)
+    const [backgroundImage, setBackgroundImage] = useState('https://wallpapercave.com/wp/wp6438851.jpg');
+    const [change, setChange] = useState(false);
+    const [isClickMeVisible, setClickMeVisible] = useState(false);
+    const [goWish, setGoWish]= useState(false);
 
     // useEffect(() => {
     //     // Set the background image dynamically, e.g., from an API or based on a condition
     //     setBackgroundImage('https://static.vecteezy.com/system/resources/previews/004/548/332/original/glossy-happy-birthday-balloons-background-illustration-free-vector.jpg');
     //   }, []);
     
-      
+      function gotoWish(){
+        setGoWish(true);
+      }
+      if(goWish){
+        return <Navigate to="/wish"/>;
+      }
       function Changes(){
         const envelope = document.querySelector('.envelope-wrapper');   
                     
@@ -19,10 +27,12 @@ const Envelop = () => {
                               setBackgroundImage('https://tse4.mm.bing.net/th/id/OIP.USOWJoCy_MXmoc5RoOuJBAHaNK?rs=1&pid=ImgDetMain');
                             }else{
                               setChange(false);
-                              setTimeout(() => setBackgroundImage('https://tse1.mm.bing.net/th/id/OIP.rE0uuA4fzSsOM1O_FoxeQQHaNK?rs=1&pid=ImgDetMain'), 1000);
+                              setTimeout(() => setBackgroundImage('https://wallpapercave.com/wp/wp6438851.jpg'), 1000);
                               
 
                             }
+                            setTimeout(() =>setClickMeVisible(true) , 2500);
+                            
                       //       if (backgroundImage === null) {
                       //   // setBackgroundImage('https://static.vecteezy.com/system/resources/previews/004/548/332/original/glossy-happy-birthday-balloons-background-illustration-free-vector.jpg');
                       //   setBackgroundImage('https://tse4.mm.bing.net/th/id/OIP.USOWJoCy_MXmoc5RoOuJBAHaNK?rs=1&pid=ImgDetMain');
@@ -33,27 +43,36 @@ const Envelop = () => {
                       // };
                     
       }
+      const letterStyle ={
+        backgroundImage: `url(https://th.bing.com/th/id/OIP.nW8OyX_zQ5ndTpAejjL8wAHaEK?rs=1&pid=ImgDetMain)`,
+        backgroundPosition: 'center',
+      }
       const divStyle = {
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
-        height: '100vh',
+      //   height: '100vh',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        transition: 'backgroundImage 2s ease-in-out 0.5s', 
+      //   transition: 'backgroundImage 2s ease-in-out 0.5s', 
       };
   return (
     <div style={divStyle} className=' body m-0 p-0 box-border bg-emerald-900 flex align-middle justify-center w-screen h-screen'>
     <div className='container h-screen grid content-center justify-center'>
         <div className=' envelope-wrapper bg-slate-100 content-center'>
             <div className=' envelope relative'onClick={()=>Changes()}>
-                <div className=' letter'>
-                    <div className=' text'><strong>Dear User</strong>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto sit alias quidem necessitatibus illo officia temporibus iusto labore pariatur quibusdam minima, excepturi repudiandae possimus, saepe corrupti sed molestiae. Architecto!</p></div>
+                <div className=' letter' style={letterStyle}>
+                    <div className=' text relative'><strong>Dear Spelina</strong>
+                    <h1>There is something for you</h1></div>
                 </div>
             </div>
             <div className=' heart' onClick={()=>Changes()}>
 
             </div>
         </div>
+        {isClickMeVisible && (
+        <button onClick={gotoWish} className="  p-2 px-4 m-2 text-lg bg-black text-white absolute top-3/4 left-1/2 transform -translate-x-1/2 border-2 border-black rounded-xl">
+          Its here
+        </button>
+      )}
     </div></div>
     
   )

@@ -6,7 +6,8 @@ function Start (){
     const [isYes, setYes] = useState(false);
     const [isNo, setNo] = useState(false);
     const divstyle = {
-        backgroundImage:`url(https://tse3.mm.bing.net/th/id/OIP.NYJwoPEd7Gjpa3WEJN19lQAAAA?rs=1&pid=ImgDetMain)`
+        backgroundImage:`url(https://tse3.mm.bing.net/th/id/OIP.NYJwoPEd7Gjpa3WEJN19lQAAAA?rs=1&pid=ImgDetMain)`,
+        backgroundPosition: 'center',
     }
     const matchYes = () =>{
         setYes(true);
@@ -15,7 +16,7 @@ function Start (){
         setNo(true);
     }
     if (isYes) {
-        return <Navigate to="/home"/>;
+        return <Navigate to="/envelope"/>;
       }
     if(isNo){
         setNo(false);
